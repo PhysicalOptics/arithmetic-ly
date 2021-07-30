@@ -1,6 +1,5 @@
-package com.leon.arithmetic.jianzhioffer;
+package com.leon.arithmetic.offer;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
