@@ -1,4 +1,4 @@
-package com.leon.arithmetic.util;
+package com.leon.util;
 
 /**
   * ClassName:    TreeNode

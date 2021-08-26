@@ -1,6 +1,6 @@
 package com.leon.arithmetic.swordoffer;
 
-import com.leon.arithmetic.util.TreeNode;
+import com.leon.util.TreeNode;
 
 import java.util.*;
 

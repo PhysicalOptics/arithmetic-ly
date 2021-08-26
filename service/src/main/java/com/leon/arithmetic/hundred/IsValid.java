@@ -2,6 +2,7 @@ package com.leon.arithmetic.hundred;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
   * ClassName:    IsValid
@@ -9,6 +10,7 @@ import java.util.LinkedList;
   * @Author:      liyang
   * @Date:        2021/4/21
   * version     1.0.0
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
  */
 public class IsValid {
     public boolean isValid(String s){
@@ -19,6 +21,9 @@ public class IsValid {
         charMap.put(']','[');
         charMap.put(')','(');
         LinkedList<Character> stack = new LinkedList<>();
+        Stack<Character> stack1 = new Stack<>();
+        stack1.push('a');
+        stack1.pop();
         for (int i = 0; i < length; i++) {
             char c = s.charAt(i);
             if (charMap.containsKey(c)){

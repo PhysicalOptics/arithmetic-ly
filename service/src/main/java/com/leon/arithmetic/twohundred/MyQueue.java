@@ -1,6 +1,5 @@
 package com.leon.arithmetic.twohundred;
 
-import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -9,6 +8,7 @@ import java.util.Stack;
   * @Author:      liyang
   * @Date:        2021/3/5
   * version     1.0.0
+ * 仅使用两个栈实现先入先出队列
  */
 public class MyQueue {
     private Stack<Integer> inQueue;

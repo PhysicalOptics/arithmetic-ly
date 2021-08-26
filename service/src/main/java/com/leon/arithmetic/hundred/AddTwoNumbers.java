@@ -1,6 +1,6 @@
 package com.leon.arithmetic.hundred;
 
-import com.leon.arithmetic.util.ListNode;
+import com.leon.util.ListNode;
 
 /**
   * ClassName:    AddTwoNumbers

@@ -1,6 +1,6 @@
 package com.leon.arithmetic.ninehundred;
 
-import com.leon.arithmetic.util.TreeNode;
+import com.leon.util.TreeNode;
 
 /**
   * ClassName:    IsCousins
