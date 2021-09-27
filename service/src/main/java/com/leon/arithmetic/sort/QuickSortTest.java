@@ -21,12 +21,14 @@ public class QuickSortTest {
                 end--;
             }
             array[start] = array[end];
-//            array[end] = temp;
+            start++;
+            //            array[end] = temp;
             while (start<end && temp>=array[start]){
                 start++;
             }
             array[end] = array[start];
-//            array[start] = temp;
+            end--;
+            //            array[start] = temp;
         }
         array[start]=temp;
         if (left<start-1){
@@ -40,7 +42,8 @@ public class QuickSortTest {
 
 
     public static void main(String[] args) {
-        int [] array = {5,2,3,1,6,4,0};
+        int [] array = {4,1,8,2,0,35,5,9,7,-2,23,17,-63,27,15};
+//        int [] array = {1,2,4,5,7,9};
         quickSort(array,0,array.length - 1);
         for (int i = 0; i < array.length;i++)
             System.out.print(array[i] + " ");

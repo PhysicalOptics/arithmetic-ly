@@ -1,5 +1,6 @@
 package com.leon.arithmetic.hundred;
 
+import com.leon.util.ListNode;
 import javafx.beans.binding.When;
 
 /**
@@ -10,14 +11,6 @@ import javafx.beans.binding.When;
   * version     1.0.0
  */
 public class ReverseBetween {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
 
     public static void main(String[] args){
         ReverseBetween reverseBetween = new ReverseBetween();

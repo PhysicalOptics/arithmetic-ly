@@ -1,5 +1,7 @@
 package com.leon.arithmetic.onehundred;
 
+import com.leon.util.ListNode;
+
 /**
   * ClassName:    Onehundred
   * @Description: 25
@@ -123,14 +125,5 @@ public class Onehundred {
 //            end = pre;
 //        }
 //        return dummy.next;
-    }
-
-
-    public class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
