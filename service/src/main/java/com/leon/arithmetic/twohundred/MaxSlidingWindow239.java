@@ -19,20 +19,22 @@ public class MaxSlidingWindow239 {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer t1, Integer t2) {
-                return t2 - t1;
+                return t1 - t2;
             }
         });
-        priorityQueue.add(23);
-        priorityQueue.add(13);
-        priorityQueue.add(45);
-        priorityQueue.add(24);
-        priorityQueue.add(3);
+        priorityQueue.offer(1);
+        priorityQueue.offer(2);
+        priorityQueue.offer(-2147483647);
+
+
         priorityQueue.poll();
-        priorityQueue.add(85);
+        priorityQueue.offer(24);
         priorityQueue.poll();
-        for (Integer integer : priorityQueue) {
-            System.out.println(integer);
-        }
+        priorityQueue.offer(3);
+        priorityQueue.poll();
+        priorityQueue.offer(85);
+        priorityQueue.poll();
+
 
     }
 
