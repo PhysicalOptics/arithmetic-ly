@@ -15,6 +15,7 @@ public class ThirdMax414 {
 
     public static void main(String[] args){
         ThirdMax414 thirdMax = new ThirdMax414();
+
         thirdMax.thirdMax2(new int[]{1,2,-2147483648});
     }
 
