@@ -26,6 +26,7 @@ public class MinDistance72 {
                 int left = dp[i][j-1];
                 int up = dp[i-1][j];
                 int core = dp[i-1][j-1];
+                // 只用处理当前比较的
                 if (word1.charAt(i-1)==word2.charAt(j-1)){
                     core-=1;
                 }

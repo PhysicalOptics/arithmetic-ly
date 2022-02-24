@@ -30,30 +30,30 @@ public class UnionFind {
         }
     }
 
-    public int findset(int x) {
-        return parent[x] == x ? x : (parent[x] = findset(parent[x]));
+    public int find(int x) {
+        return parent[x] == x ? x : (parent[x] = find(parent[x]));
     }
 
     public boolean  unite(int x, int y) {
-        x = findset(x);
-        y = findset(y);
+        x = find(x);
+        y = find(y);
         if (x == y) {
             return false;
         }
         if (size[x] < size[y]) {
-            int temp = x;
-            x = y;
-            y = temp;
+            parent[x] = y;
+            size[y] += size[x];
+        }else {
+            parent[y] = x;
+            size[x] += size[y];
         }
-        parent[y] = x;
-        size[x] += size[y];
         --setCount;
         return true;
     }
 
     public boolean connected(int x, int y) {
-        x = findset(x);
-        y = findset(y);
+        x = find(x);
+        y = find(y);
         return x == y;
     }
 
