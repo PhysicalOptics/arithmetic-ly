@@ -16,8 +16,8 @@ public class TreeNode {
     public Integer val;
     public TreeNode left;
     public TreeNode right;
+    public TreeNode() {}
     public TreeNode(Integer x) { val = x; }
-
     // 构建tree
     public static TreeNode constructTree(Integer[] nums){
         if (nums.length == 0) return new TreeNode(0);
@@ -137,11 +137,98 @@ public class TreeNode {
         }
     }
 
-    public static void main(String[] args){
-        TreeNode treeNode1 = new TreeNode(1);
 
-        TreeNode treeNode2 = treeNode1.constructTree(new Integer[]{5,4,8,22,null,13,4,7,2,null,null,null,1});
-        show(treeNode2);
+    // 先序遍历
+    public void preOrder(TreeNode node) {
+        if(node == null) {
+            return;
+        }
+        System.out.println(node.val);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void preOrder2(TreeNode root) {
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        while (stack.size()>0||root!=null){
+            while (root!=null){
+                System.out.println(root.val);
+                stack.push(root);
+                root=root.left;
+            }
+            TreeNode pop = stack.pop();
+            root = pop.right;
+        }
+    }
+
+    // 中序遍历
+    public void infixOrder(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        infixOrder(node.left);
+        System.out.println(node.val);
+        infixOrder(node.right);
+    }
+
+    public void infixOrder2(TreeNode root){
+        LinkedList<TreeNode> stk = new LinkedList<TreeNode>();
+        while (root != null || !stk.isEmpty()) {
+            while (root != null) {
+                stk.push(root);
+                root = root.left;
+            }
+            root = stk.pop();
+            System.out.println(root.val);
+            root = root.right;
+        }
+    }
+    // 后序遍历
+    public void afterOrder(TreeNode node) {
+        if(node == null) {
+            return;
+        }
+        afterOrder(node.left);
+        afterOrder(node.right);
+        System.out.println(node.val);
+    }
+
+    public void afterOrder2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        TreeNode prev = null;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (root.right == null || root.right == prev) {
+                System.out.println(root.val);
+                prev = root;
+                root = null;
+            } else {
+                stack.push(root);
+                root = root.right;
+            }
+        }
+
+    }
+
+    public static void main(String[] args){
+        //TreeNode treeNode1 = new TreeNode(1);
+        //
+        //TreeNode treeNode2 = treeNode1.constructTree(new Integer[]{5,4,8,22,null,13,4,7,2,null,null,null,1});
+        //show(treeNode2);
+
+
+        TreeNode root = TreeNode.constructTree(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, null, 10, null, 11, 12, 13});
+        root.afterOrder(root);
+        System.out.println("-----------------------");
+        root.afterOrder2(root);
 
     }
     

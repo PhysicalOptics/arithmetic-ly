@@ -1,5 +1,9 @@
 package com.leon.arithmetic.tree;
 
+import com.leon.util.TreeNode;
+
+import java.util.*;
+
 /**
   * ClassName:    NodeTree
   * @Description: 二叉树node
@@ -120,6 +124,20 @@ public class NodeTree<T> {
         preOrder(node.left);
         preOrder(node.right);
     }
+
+    public void preOrder2(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.push(root);
+        while (!queue.isEmpty()) {
+            TreeNode pop = queue.pop();
+            list.add(pop.val);
+            if (pop.left!=null) queue.push(pop.left);
+            if (pop.right!=null) queue.push(pop.right);
+
+        }
+    }
+    
     // 中序遍历
     public void infixOrder(Node node) {
         if (node == null) {
@@ -128,6 +146,20 @@ public class NodeTree<T> {
         infixOrder(node.left);
         System.out.println(node.data);
         infixOrder(node.right);
+    }
+
+    public void infixOrder2(TreeNode root){
+        List<Integer> res = new ArrayList<Integer>();
+        LinkedList<TreeNode> stk = new LinkedList<TreeNode>();
+        while (root != null || !stk.isEmpty()) {
+            while (root != null) {
+                stk.push(root);
+                root = root.left;
+            }
+            root = stk.pop();
+            res.add(root.val);
+            root = root.right;
+        }
     }
     // 后序遍历
     public void afterOrder(Node node) {
@@ -139,6 +171,18 @@ public class NodeTree<T> {
         System.out.println(node.data);
     }
 
+    public void afterOrder2(TreeNode root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.push(root);
+        while (!queue.isEmpty()) {
+            TreeNode pop = queue.pop();
+            if (pop.left!=null) queue.push(pop.left);
+            if (pop.right!=null) queue.push(pop.right);
+            list.add(pop.val);
+
+        }
+    }
     public static void main(String args[]){
         NodeTree<String> nt = new NodeTree<String>();
         /**
